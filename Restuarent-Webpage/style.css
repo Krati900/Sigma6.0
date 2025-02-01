@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.restuarent {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.sec-1 {
+  width: 100%;
+  height: 100vh; 
+  background-image: url("food2.webp");
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  opacity: 0.9;
+}
+.navbar {
+  width: 100%;
+  height: 80px;
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 0px 10px black;
+}
+.logo h1 {
+  color: #f2f2f2;
+  font-size: 35px;
+  cursor: pointer;
+}
+.logo h1::first-letter {
+  color: #b7da40;
+  font-size: 50px;
+}
+.menu-btn {
+  display: flex;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+nav ul li {
+  list-style: none;
+  color: #212320;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 3px solid black;
+  /* border-top: 3px solid black; */
+  border-radius: 6px;
+}
+nav ul li:hover {
+  border-bottom: 5px solid white;
+  border-top: 5px solid white;
+  border-radius: 6px;
+  transition: 1.2s;
+  color: white;
+  box-shadow: 0px 0px 10px gray;
+}
+.book-btn {
+  background-color: #526a00;
+  border: 2px solid #526a00;
+  color: white;
+  padding: 5px;
+  box-shadow: 0px 0px 10px black; 
+}
+.book-btn:hover {
+  border: 5px solid white;
+}
+.text-desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  text-align: center;
+}
+.text-desc h3 {
+  font-family: "Mukta", serif;
+  color: #b7da40;
+  font-size: 40px;
+  border-bottom: 5px dotted #b7da40;
+}
+.text-desc p {
+  color: white;
+  font-weight: 700;
+}
+.dish {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.dish-1 img {
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%; 
+  object-fit: cover;
+}
+.dish-1 img:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
+  transition: 2s;
+  box-shadow: 0px 0px 10px black;
+}
+.dish p {
+  font-weight: 700;
+  font-size: 20px;
+}
+.dish h2 {
+  color: white;
+}
+.dish h2::first-letter {
+  color: #b7da40;
+  font-size: 35px;
+}
+.sec-1 .toggle-bar i {
+  display: none;
+}
+input {
+  display: none;
+}
+@media (max-width: 1040px) {
+  .navbar nav ul li {
+    display: none;
+  }
+  .sec-1 .toggle-bar i {
+    display: block; 
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  .menu-toggle:checked + .toggle-bar + div nav ul li {
+    display: block;
+  }
+  nav ul {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 1);
+    text-align: center;
+    color: rgb(228, 221, 221);
+    z-index: 20;
+  }
+  input {
+    display: none;
+  }
+  .text-desc {
+    display: none;
+  }
+}
+
+
