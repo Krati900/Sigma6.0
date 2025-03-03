@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess The Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="guess-game">
+    <h1>Guess The Number From 1 to 100 </h1>
+    <form>
+      <input class="guess-no" type="text" placeholder="Enter a number">
+      <br>
+      <button id="submit" type="submit">Submit</button>
+    </form>
+    <div class="addition-data">
+      <p class="prev-val">Previous Guessed Value: []</p>
+      <p class="rem-counts">Remaining Guessing Counts: <span id="remaining-count">10</span></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
