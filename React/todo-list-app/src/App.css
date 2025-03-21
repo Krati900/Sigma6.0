@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: cornsilk;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(94, 92, 92);
+    margin: 1rem;
+}
+form {
+    text-align: center;
+}
+form input {
+    width: 50%;
+    height: 45px;
+    background-color: rgb(131, 115, 65);
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+form input::placeholder {
+    font-size: 16px;
+    color: rgb(224, 218, 218);
+}
+ul {
+    background-color: beige;
+    width: 30%;
+    text-align: left;
+    margin-left: 21%;
+}
+ul li {
+    height: 45px;  
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(223, 218, 202);
+    border-radius: 6px;
+    text-decoration: none;
+    list-style: none;
+    letter-spacing: 2px;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+ul li span {
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+    bottom: 8px;
+    cursor: pointer;
+}
+form button {
+    width: 8%;
+    height: 45px;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px;
+    color: rgb(48, 44, 44);
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+    box-shadow: 0px 0px 3px gray;
+    cursor: pointer;
+}
+form button:hover {
+    box-shadow: 0px 0px 3px gray;
+    background-color: black;
+    color: white;
+}
+.cmpltTodo {
+    text-decoration: line-through;
+    background-color: rgb(211, 205, 205);
+    color: rgb(78, 77, 77);
+    
+}
