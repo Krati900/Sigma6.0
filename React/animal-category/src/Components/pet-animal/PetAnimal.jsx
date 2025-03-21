@@ -1,12 +1,11 @@
 import React from 'react'
 import { PetData } from './PetData'
-import Button from '../utils/Button';
 import Card from '../utils/Card';
 function PetAnimal() {
   return (
     <div>
-       <Card data={ PetData }/>
-       <Button />
+      <h1>Pet Animals</h1>
+      <div className='animal-cards'><Card data={ PetData }/></div>
     </div>
   )
 }

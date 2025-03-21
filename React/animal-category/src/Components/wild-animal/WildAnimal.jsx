@@ -1,14 +1,12 @@
 import React from 'react'
 import { WildData } from './WildData';
-import Button from '../utils/Button';
 import Card from '../utils/Card';
 function WildAnimal() {
   return (
     <div>
-      <Card data={ WildData }/>
-      <Button />
+      <h1>Wild Animals</h1>
+      <div className='animal-cards'><Card data={ WildData }/></div>
     </div>
   )
 }
-
 export default WildAnimal

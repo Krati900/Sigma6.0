@@ -1,0 +1,30 @@
+.btn {
+    padding: 10px;
+    border: none;
+    color: whitesmoke;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    &.green {
+        background-color: green;
+    }
+    &.blue {
+        background-color: blue;
+    }
+    &.orange {
+        background-color: orange;
+    }
+    &.red {
+        background-color: red;
+    }
+    &.black {
+        background-color: black;
+    }
+    &.gray {
+        background-color: gray;
+    }
+    &.aqua {
+        background-color: aqua;
+    }
+}

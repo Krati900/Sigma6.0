@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import '../CSS/button.css';
 
-function Button() {
+function Button({ children, handleButtonClick, diffBackground }) {
   return (
     <div>
-      
+      <button 
+      onClick={ handleButtonClick }
+      className={ `btn ${diffBackground}` }>{ children }</button>
     </div>
   )
 }

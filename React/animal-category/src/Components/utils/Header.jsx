@@ -1,9 +1,10 @@
 import React from 'react'
 import { HeaderData } from './HeaderData'
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <div className="weather-app">
+    <div className="animal-app">
       <div className='header'>
         <div className="logo">
             <div className="logo-icon"><i class="fa-solid fa-shield-cat"></i></div>
@@ -11,8 +12,8 @@ function Header() {
         </div>
         <nav className="menu">
             <ul>
-                <li><a href=""></a>Pet Animal</li>
-                <li><a href=""></a>Wild Animal</li>
+              <li><Link to="/">Pet Animal</Link></li>
+              <li><Link to="/wild-animal">Wild Animal</Link></li>
             </ul>
         </nav>
       </div>
