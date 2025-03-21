@@ -1,0 +1,42 @@
+Summary:
+
+Study and develop a React-based application as POC showcasing dashboard stats, CRUD functionality, pagination, search, and filters, while implementing best practices in state management, UI development, and routing.
+
+Phase 1: Study React Fundamentals
+    -> Core Concepts: JSX, components, props, state
+    -> React Hooks: useState, useEffect, useMemo, useRef, useCallback, useContext, useReducer, useLocation, useParams, useSearchParams, custom hooks
+    -> Reusable Components: Best practices for modular development
+    -> Performance Optimization: Efficient state and effect management
+    -> Reference Resource:
+
+:link: React Learning Playlist
+YouTubeYouTube
+React JS Full Free Course by WsCube Tech
+This React JS :fire: crash course will help you get an overview of what is React JS and how to use and implement React JS for beginners. React JS is a JavaScript ...
+
+Phase 2: POC Development – Acceptance Criteria
+    -> Dashboard Page:
+        Displays key statistics using reusable card components with mock data or APIs.
+        Utilizes higher-order functions (map, filter, reduce) for data processing.
+
+    -> Products Page:
+        Dynamic table with CRUD operations (Add, Edit, Delete, View in modal).
+        Pagination, search, and filters for data management.
+
+    -> React Hooks & State Management:
+        Implements state handling with useState, useReducer, useContext.
+        Uses React Router hooks (useLocation, useParams, useSearchParams) for navigation and filtering.
+        Optimized performance using useMemo, useRef, and useCallback.
+
+    -> Form Handling & Validation:
+        Uses controlled components with useReducer for complex form state management.
+        Ensures input validation for data accuracy.
+
+    -> Optimized UI & Component Architecture:
+        Modular, reusable components following best practices.
+        Styled using Tailwind CSS or CSS Modules.
+        Implements error handling and ensures a smooth UX.
+
+Deliverables:
+    -> Fully functional React POC project
+    -> Clean, well-documented code
