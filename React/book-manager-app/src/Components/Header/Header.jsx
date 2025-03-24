@@ -1,26 +1,17 @@
 import React from "react";
+import Logo from './Logo.jsx';
+import { HeaderData } from "./HeaderData.jsx";
+import NavList from './Nav/NavList.jsx';
 
 function Header() {
   return (
     <div>
       <header>
         <div className="logo">
-          <div className="icon-text">
-            <i></i>Book Shell
-          </div>
+         <Logo logoText={HeaderData[0].logo.text}></Logo>
         </div>
         <nav>
-          <ul>
-            <li>Dashboard</li>
-            <li>
-              Books
-              <ul>
-                <li>Add Books</li>
-                <li>Manage Books</li>
-              </ul>
-            </li>
-            <li>Login/Log Out</li>
-          </ul>
+          <NavList></NavList>
         </nav>
       </header>
     </div>
@@ -28,3 +19,4 @@ function Header() {
 }
 
 export default Header;
+

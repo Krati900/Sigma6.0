@@ -4,11 +4,13 @@ import { BookDashboardData } from "./BookDashboardData.jsx";
 import TabButton from "../../Components/Tab/TabButton.jsx";
 
 function DashboardPage() {
-  // const [activeTab, setActiveTab] = useState[0];
 
-  // const handleTabButton = (index) => {
-  //   setActiveTab(activeTab(index));
-  // }
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabButton = (index) => {
+    setActiveTab(index); 
+  };
+
   return (
     <div className="dashboard">
       <div className="dash-icon-title">
@@ -32,18 +34,40 @@ function DashboardPage() {
           ))
         )}
       </div>
+
       <div className="genre-counts">
         <h3>Genre Counts</h3>
         <div className="tabs">
           {BookDashboardData.map((dashboardData, index) =>
             dashboardData.genre_counts.map((genreCount, idx) => (
-              <TabButton key={`${index}-${idx}`}>
+              <TabButton
+                key={`${index}-${idx}`}
+                handleTab={() => handleTabButton(idx)} 
+                className={activeTab === idx ? "active" : ""}
+              >
                 {genreCount.genre} ({genreCount.total_count})
               </TabButton>
             ))
           )}
         </div>
-        <div className="tab-content"></div>
+
+        <div className="tab-content">
+          {BookDashboardData.map((dashboardData, index) => (
+            dashboardData.genre_counts.map((genre, idx) => (
+              activeTab === idx && (
+                <div key={`${index}-${idx}`}>
+                  {genre.images.map((image, indx) => (
+                    <Card key={`${index}-${idx}-${indx}`}>
+                      <div className="image-container">
+                        <img src={image} alt={genre.genre} />
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              )
+            ))
+          ))}
+        </div>
       </div>
     </div>
   );
