@@ -15,8 +15,8 @@ function BookDataList() {
   // };
   return (
     <div className="book-list">
-      <h1>Book Details</h1>
-      <div className="book-title">Book List</div>
+      <h3>Book Details</h3>
+      {/* <div className="book-title">Book List</div> */}
       <div className="filters">
         <div className="filter-form">
           <DynamicForm

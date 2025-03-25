@@ -20,19 +20,22 @@ function DashboardPage() {
 
       <div className="category-counts">
         <h3>Category Counts</h3>
-        {BookDashboardData.map((dashboardData, index) =>
-          dashboardData.category_counts.map((category, idx) => (
-            <Card key={`${index}-${idx}`}>
-              <div className="category-name">
-                <h4>{category.categoryName}</h4>
-              </div>
-              <div className="icon-counts">
-                <i className="fas fa-book"></i>
-                <span>{category.total_count}</span>
-              </div>
-            </Card>
-          ))
-        )}
+        <div className="cat-counts">
+          {BookDashboardData.map((dashboardData, index) =>
+            dashboardData.category_counts.map((category, idx) => (
+              <Card key={`${index}-${idx}`}>
+                <div className="category-name">
+                  <h4>{category.categoryName}</h4>
+                </div>
+                <div className="icon-counts">
+                  <i className="fas fa-book"></i>
+                  <span>{category.total_count}</span>
+                </div>
+              </Card>
+            ))
+          )}
+        </div>
+       
       </div>
 
       <div className="genre-counts">
@@ -43,7 +46,7 @@ function DashboardPage() {
               <TabButton
                 key={`${index}-${idx}`}
                 handleTab={() => handleTabButton(idx)} 
-                className={activeTab === idx ? "active" : ""}
+                className={`tab-button ${activeTab === idx ? "active" : ""}`}
               >
                 {genreCount.genre} ({genreCount.total_count})
               </TabButton>
@@ -55,10 +58,10 @@ function DashboardPage() {
           {BookDashboardData.map((dashboardData, index) => (
             dashboardData.genre_counts.map((genre, idx) => (
               activeTab === idx && (
-                <div key={`${index}-${idx}`}>
+                <div key={`${index}-${idx}`} className="image-container">
                   {genre.images.map((image, indx) => (
                     <Card key={`${index}-${idx}-${indx}`}>
-                      <div className="image-container">
+                      <div className="image">
                         <img src={image} alt={genre.genre} />
                       </div>
                     </Card>

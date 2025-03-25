@@ -2,9 +2,9 @@ import React from 'react'
 import NavItems from './NavItems'
 function NavList({navData}) {
   return (
-    <div>
+    <div className='nav-ul'>
       {navData.map((item, index) => (
-        <NavItems key={index}
+        <NavItems  className='nav-ul' key={index}
             label={item.label} 
             subItems={item.subItems}
             path={item.path}

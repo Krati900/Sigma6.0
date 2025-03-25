@@ -1,9 +1,9 @@
 import React from 'react'
 
-function TabButton({children, handleTab}) {
+function TabButton({children, handleTab, className}) {
   return (
-    <div className='tab-button'>
-      <li className='tabs' onClick={handleTab}>{children}</li>
+    <div className={`${className}`}>
+      <li onClick={handleTab}>{children}</li>
     </div>
   )
 }

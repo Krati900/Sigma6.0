@@ -56,7 +56,7 @@ export const formFields = [
     data: [
       {
         type: "input",
-        label: "Search",
+        // label: "Search",
         name: "search",
         placeholder: "Search books",
       },

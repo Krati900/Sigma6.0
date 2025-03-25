@@ -6,11 +6,11 @@ import NavList from './Nav/NavList.jsx';
 function Header() {
   return (
     <div>
-      <header>
+      <header className="main-header">
         <div className="logo">
          <Logo logoText={HeaderData[0].logo.text}></Logo>
         </div>
-        <nav>
+        <nav className="nav-items">
           <NavList navData={HeaderData[1].navItems}></NavList>
         </nav>
       </header>
