@@ -9,18 +9,26 @@ export const HeaderData = [
       navItems: [
         {
           label: "Dashboard",
+          subItems: [],
+          path: "/",
+        },
+        {
+          label: "Manage Books",
+          path: "/manage-book",
           subItems: []
+            // { label: "Add Books" },
+            // { label: "Manage Books" }
+          // ]
         },
         {
-          label: "Books",
-          subItems: [
-            { label: "Add Books" },
-            { label: "Manage Books" }
-          ]
+          label: "Login",
+          subItems: [],
+          path: "/Login"
         },
         {
-          label: "Login/Log Out",
-          subItems: [] 
+          label: "Log Out",
+          subItems: [],
+          path: "/Logout"
         }
       ]
     }

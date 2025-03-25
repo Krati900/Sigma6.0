@@ -15,7 +15,7 @@ function DashboardPage() {
     <div className="dashboard">
       <div className="dash-icon-title">
         <i></i>
-        <span>Dashboard</span>
+        {/* <span>Dashboard</span> */}
       </div>
 
       <div className="category-counts">

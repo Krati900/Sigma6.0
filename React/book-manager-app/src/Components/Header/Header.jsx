@@ -11,7 +11,7 @@ function Header() {
          <Logo logoText={HeaderData[0].logo.text}></Logo>
         </div>
         <nav>
-          <NavList></NavList>
+          <NavList navData={HeaderData[1].navItems}></NavList>
         </nav>
       </header>
     </div>
