@@ -19,7 +19,7 @@ function DashboardPage() {
       </div>
 
       <div className="category-counts">
-        <h3>Category Counts</h3>
+        <h2>Category Counts</h2>
         <div className="cat-counts">
           {BookDashboardData.map((dashboardData, index) =>
             dashboardData.category_counts.map((category, idx) => (
@@ -39,7 +39,7 @@ function DashboardPage() {
       </div>
 
       <div className="genre-counts">
-        <h3>Genre Counts</h3>
+        <h2>Genre Counts</h2>
         <div className="tabs">
           {BookDashboardData.map((dashboardData, index) =>
             dashboardData.genre_counts.map((genreCount, idx) => (

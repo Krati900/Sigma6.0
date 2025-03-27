@@ -5,7 +5,7 @@ function DynamicForm({ fields, onSubmit }) {
     <div className="form-layout">
       <form onSubmit={onSubmit}>
         {fields.map((field, index) => {
-          const { label, type, name, options, placeholder } = field;
+          const { label, type, name, options, placeholder, defaultValue} = field;
 
           return (
             <div key={index} className="form-fields">
@@ -39,14 +39,15 @@ function DynamicForm({ fields, onSubmit }) {
               )}
 
               {type === "select" && options && (
-                <select name={name} id={name}>
+                <select name={name} id={name}  defaultValue={defaultValue}>
                   {options.map((option, index) => (
-                    <option key={index} value={option.value}>
-                      {option.label}
+                    <option key={index} value={option}>
+                      {option}
                     </option>
                   ))}
                 </select>
               )}
+
             </div>
           );
         })}

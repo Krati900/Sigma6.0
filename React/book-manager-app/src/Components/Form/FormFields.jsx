@@ -27,27 +27,29 @@ export const formFields = [
     data: [
       {
         type: "input",
-        label: "Book Name",
+        // label: "Book Name",
         name: "bookName",
         placeholder: "Enter book name",
       },
       {
         type: "input",
-        label: "Author",
+        // label: "Author",
         name: "author",
         placeholder: "Enter author name",
       },
       {
         type: "select",
-        label: "Genre",
+        // label: "Genre",
         name: "genre",
-        options: ["Fiction", "Non-Fiction", "Mystery", "Fantasy"],
+        options: ["Select Genre", "Fiction", "Mystery", "Scientific", "Fantasy", "Romance", "Adventure", "Biography", "Horror", "Thriller", "Young Adult", "History", "Self Help", "Science Fiction", "Historical Fiction"],
+        defaultValue: "Select Genre"
       },
       {
         type: "select",
-        label: "Category",
+        // label: "Category",
         name: "category",
-        options: ["Premium", "Free"],
+        options: ["Select Category", "Premium", "Free"],
+        defaultValue: "Select Category"
       },
     ],
   },
@@ -58,19 +60,21 @@ export const formFields = [
         type: "input",
         // label: "Search",
         name: "search",
-        placeholder: "Search books",
+        placeholder: "Search books ..............",
       },
       {
         type: "select",
-        label: "Genre",
+        // label: "Genre",
         name: "genre",
-        options: ["Fiction", "Non-Fiction", "Mystery", "Fantasy"],
+        options: ["Select Genre", "Fiction", "Mystery", "Scientific", "Fantasy", "Romance", "Adventure", "Biography", "Horror", "Thriller", "Young Adult", "History", "Self Help", "Science Fiction", "Historical Fiction"],
+        defaultValue: "Select Genre"
       },
       {
         type: "select",
-        label: "Category",
+        // label: "Category",
         name: "category",
-        options: ["Premium", "Free"],
+        options: ["Select Category", "Premium", "Free"],
+        defaultValue: "Select Category"
       },
     ],
   },
