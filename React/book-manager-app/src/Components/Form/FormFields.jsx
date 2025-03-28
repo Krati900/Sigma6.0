@@ -78,4 +78,47 @@ export const formFields = [
       },
     ],
   },
+  {
+    name: "deleteBook",
+    data: [
+      {
+        type: "radio",  
+        name: "confirmDelete",
+        options: ["Confirm Delete", "Cancel"],  
+      },
+    ],
+  },
+  {
+    name: "editBook",
+    data: [
+      {
+        type: "input",
+        label: "Book Name",
+        name: "bookName",
+        placeholder: "Enter book name",
+        defaultValue: "Harry Potter", 
+      },
+      {
+        type: "input",
+        label: "Author",
+        name: "author",
+        placeholder: "Enter author name",
+        defaultValue: "J.K. Rowling",
+      },
+      {
+        type: "select",
+        label: "Genre",
+        name: "genre",
+        options: ["Select Genre", "Fiction", "Mystery", "Scientific", "Fantasy", "Romance", "Adventure", "Biography", "Horror", "Thriller", "Young Adult", "History", "Self Help", "Science Fiction", "Historical Fiction"],
+        defaultValue: "Fantasy", 
+      },
+      {
+        type: "select",
+        label: "Category",
+        name: "category",
+        options: ["Select Category", "Premium", "Free"],
+        defaultValue: "Free", 
+      },
+    ],
+  },
 ];
