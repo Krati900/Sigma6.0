@@ -20,16 +20,16 @@ export const HeaderData = [
             // { label: "Manage Books" }
           // ]
         },
-        {
-          label: "Login",
-          subItems: [],
-          path: "/Login"
-        },
-        {
-          label: "Log Out",
-          subItems: [],
-          path: "/Logout"
-        }
+        // {
+        //   label: "Login",
+        //   subItems: [],
+        //   path: "/Login"
+        // },
+        // {
+        //   label: "Log Out",
+        //   subItems: [],
+        //   path: "/Logout"
+        // }
       ]
     }
 ];

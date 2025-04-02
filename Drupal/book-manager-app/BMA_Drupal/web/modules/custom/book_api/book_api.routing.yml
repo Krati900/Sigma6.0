@@ -1,0 +1,45 @@
+book_api.get_books:
+  path: '/api/books'
+  defaults:
+    _controller: '\Drupal\book_api\Controller\BookApiController::getBooks'
+    _title: 'Get Books'
+  methods: [GET]
+  requirements: 
+    _permission: 'access content' 
+
+book_api.get_book:
+  path: '/api/books/{id}'
+  defaults:
+    _controller: '\Drupal\book_api\Controller\BookApiController::getBook'
+    _title: 'Get Book'
+  methods: [GET]
+  requirements: 
+    _permission: 'access content' 
+
+book_api.create_book:
+  path: '/api/books'
+  defaults:
+    _controller: '\Drupal\book_api\Controller\BookApiController::createBook'
+    _title: 'Create Book'
+  methods: [POST]
+  requirements: 
+    _permission: 'access content' 
+
+book_api.update_book:
+  path: '/update/api/books/{id}'
+  defaults:
+    _controller: '\Drupal\book_api\Controller\BookApiController::updateBook'
+    _title: 'Update Book'
+  methods: [PUT]
+  requirements: 
+    _permission: 'access content'
+
+book_api.delete_book:
+  path: '/delete/api/books/{id}'
+  defaults:
+    _controller: '\Drupal\book_api\Controller\BookApiController::deleteBook'
+    _title: 'Delete Book'
+  methods: [DELETE]
+  requirements: 
+    _permission: 'access content'
+

@@ -28,7 +28,7 @@ body {
   font-weight: bold;
   color: #4A7EC1;
 }
-/* .main-header .logo::first-letter {
+/* .main-header .logo::first-letter {.+
   color: #62A6FD;
 } */
 .nav-items .nav-ul  {
@@ -70,6 +70,7 @@ h2 {
   padding: 1.8rem;
   font-size: 1.5rem;
   color: #726969;
+  border-bottom: 0.3rem solid #4A7EC1;
 }
 .category-name {
   margin-bottom: 1rem;
@@ -260,6 +261,46 @@ td:hover{
   color: white;
   font-weight: bold;
 }
-
-
+.radio-group input {
+  width: 20px;
+  margin: 40px;
+}
+.radio-group label {
+  font-size: 18px;
+}
+p {
+  font-size: 20px;
+  color: #676565;
+}
+.form-group label {
+  margin-right: 10px;
+  font-size: 18px;
+}
+i {
+  font-size: 30px;
+  color: rgb(121, 118, 118);
+}
+.book-table button {
+  border: none;
+  background-color: none;
+  cursor: pointer;
+}
+.icon-counts {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+.pagination {
+  margin-top: 2rem;
+}
+.pagination button {
+  padding: 20px;
+  margin-left: 6px;
+  font-size: 1rem;
+}
+.pagination .active {
+  background: #4A7EC1;
+  color: white;
+  border-radius: 6px;
+}
 

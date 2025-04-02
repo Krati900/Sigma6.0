@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+
+function book_api_install() {
+  $schema = \Drupal::database()->schema();
+  if (!$schema->tableExists('book_data')) {
+    $schema->createTable('book_data', [
+      'fields' => [
+        'id' => [
+          'type' => 'serial',
+          'not null' => TRUE,
+        ],
+        'name' => [
+          'type' => 'varchar',
+          'length' => 255,
+        ],
+        'author' => [
+          'type' => 'varchar',
+          'length' => 255,
+        ],
+        'genre' => [
+          'type' => 'varchar',
+          'length' => 255,
+        ],
+        'category' => [
+          'type' => 'varchar',
+          'length' => 255,
+        ],
+        'publication_year' => [
+          'type' => 'int',
+          'not null' => FALSE, 
+        ],
+        'publisher' => [
+          'type' => 'varchar',
+          'length' => 255,
+        ],
+        'rating' => [
+          'type' => 'float',
+        ],
+        'img' => [
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE, 
+        ],
+      ],
+      'primary key' => ['id'],
+    ]);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function book_api_uninstall() {
+  $schema = \Drupal::database()->schema();
+  
+  if ($schema->tableExists('book_data')) {
+    $schema->dropTable('book_data');
+  }
+}
+
+

@@ -427,5 +427,3 @@ export const BookData = {
     },
   ],
 };
-
-

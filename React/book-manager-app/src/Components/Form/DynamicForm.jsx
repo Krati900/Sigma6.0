@@ -1,80 +1,96 @@
 import React from "react";
 
-function DynamicForm({ fields, onSubmit }) {
+function DynamicForm({
+  fields,
+  onSubmit,
+  formData,
+  onChange,
+  hideSubmit = false,
+}) {
+  const renderField = (field, index) => {
+    const { label, type, name, placeholder, options, defaultValue } = field;
+
+    return (
+      <div key={index} className="form-group">
+        {label && <label htmlFor={name}>{label}</label>}{" "}
+        {type === "input" && (
+          <input
+            type="text"
+            name={name}
+            value={formData[name] || ""}
+            placeholder={placeholder}
+            onChange={onChange}
+          />
+        )}
+        {type === "number" && (
+          <input
+            type="number"
+            name={name}
+            value={formData[name] || ""}
+            placeholder={placeholder}
+            onChange={onChange}
+          />
+        )}
+        {type === "email" && (
+          <input
+            type="email"
+            name={name}
+            value={formData[name] || ""}
+            placeholder={placeholder}
+            onChange={onChange}
+          />
+        )}
+        {type === "password" && (
+          <input
+            type="password"
+            name={name}
+            value={formData[name] || ""}
+            placeholder={placeholder}
+            onChange={onChange}
+          />
+        )}
+        {type === "select" && (
+          <select
+            name={name}
+            value={formData[name] || defaultValue}
+            onChange={onChange}
+          >
+            {options.map((option, idx) => (
+              <option key={idx} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        )}
+        {type === "radio" && (
+          <div className="radio-group">
+            {options.map((option, optionIndex) => (
+              <div key={optionIndex}>
+                <input
+                  type="radio"
+                  name={name}
+                  value={option}
+                  checked={formData[name] === option}
+                  onChange={onChange}
+                />
+                <label htmlFor={`${name}-${option}`}>{option}</label>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
-    <div className="form-layout">
-      <form onSubmit={onSubmit}>
-        {fields.map((field, index) => {
-          const { label, type, name, options, placeholder, defaultValue } = field;
-
-          return (
-            <div key={index} className="form-fields">
-              {label && <label htmlFor={name}>{label}</label>}
-
-              {type === "input" && (
-                <input
-                  type="text"
-                  name={name}
-                  id={name}
-                  placeholder={placeholder}
-                  defaultValue={defaultValue || ""}
-                />
-              )}
-
-              {type === "email" && (
-                <input
-                  type="email"
-                  name={name}
-                  id={name}
-                  placeholder={placeholder}
-                  defaultValue={defaultValue || ""}
-                />
-              )}
-
-              {type === "password" && (
-                <input
-                  type="password"
-                  name={name}
-                  id={name}
-                  placeholder={placeholder}
-                  defaultValue={defaultValue || ""}
-                />
-              )}
-
-              {type === "select" && options && (
-                <select name={name} id={name} defaultValue={defaultValue}>
-                  {options.map((option, index) => (
-                    <option key={index} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              )}
-
-              {type === "radio" && options && (
-                <div className="radio-group">
-                  {options.map((option, optionIndex) => (
-                    <div key={optionIndex}>
-                      <input
-                        type="radio"
-                        name={name}
-                        id={`${name}-${option}`}
-                        value={option}
-                        defaultChecked={defaultValue === option}
-                      />
-                      <label htmlFor={`${name}-${option}`}>{option}</label>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          );
-        })}
+    <form onSubmit={onSubmit}>
+      {fields.map((field, index) => renderField(field, index))}
+      {!hideSubmit && (
         <button type="submit" className="btn">
           Submit
         </button>
-      </form>
-    </div>
+      )}
+    </form>
   );
 }
 

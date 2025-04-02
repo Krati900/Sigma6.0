@@ -1,0 +1,9 @@
+name: 'Book API'
+type: module
+description: 'A custom API to manage books data in Drupal'
+core_version_requirement: ^10 || ^11
+package: Custom
+# dependencies:
+#   - drupal:database
+#   - drupal:rest
+#   - drupal:serialization
