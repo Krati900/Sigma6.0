@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import DynamicForm from "../Form/DynamicForm";
 import { formFields } from "../Form/FormFields";
-import axios from "axios";
 
-function DynamicTable({ headerData, rowData, setBooks }) {
+function DynamicTable({ headerData, rowData, setRowData, setBooks }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState("");
   const [currentBook, setCurrentBook] = useState(null);
@@ -43,57 +42,40 @@ function DynamicTable({ headerData, rowData, setBooks }) {
     setCurrentBook(null);
   };
 
-  const refreshData = async () => {
-    try {
-      const response = await axios.get("http://localhost:8083/api/books");
-      setBooks(response.data.data);
-      console.log("Books data refreshed successfully.");
-    } catch (error) {
-      console.error("Error refreshing books:", error);
-    }
-  };
+  // // Refresh data from localStorage
+  // const refreshData = () => {
+  //   const storedBooks = JSON.parse(localStorage.getItem("books")) || [];
+  //   setBooks(storedBooks);
+  // };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const url =
-      modalType === "edit"
-        ? `http://localhost:8083/update/api/books/${currentBook.id}`
-        : `http://localhost:8083/delete/api/books/${currentBook.id}`;
+    let updatedBooks = [...rowData];
 
-    const method = modalType === "edit" ? "PUT" : "DELETE";
+    updatedBooks = JSON.parse(localStorage.getItem("books")) || [];
 
-    try {
-      const response = await axios({
-        method: method,
-        url: url,
-        data: formData,
-      });
-
-      console.log(
-        `${modalType.charAt(0).toUpperCase() + modalType.slice(1)} book:`,
-        response.data.data
+    if (modalType === "edit") {
+      // Update book in localStorage
+      updatedBooks = updatedBooks.map((book) =>
+        book.id === currentBook.id ? { ...book, ...formData } : book
       );
+      localStorage.setItem("books", JSON.stringify(updatedBooks));
 
-      closeModal();
+      alert("Book updated successfully!");
+    } else if (modalType === "delete") {
+      // Delete book from localStorage
+      updatedBooks = updatedBooks.filter((book) => book.id !== currentBook.id);
+      localStorage.setItem("books", JSON.stringify(updatedBooks));
 
-      refreshData();
-
-      alert(
-        `${
-          modalType.charAt(0).toUpperCase() + modalType.slice(1)
-        } book successful.`
-      );
-    } catch (error) {
-      console.error(
-        `${modalType.charAt(0).toUpperCase() + modalType.slice(1)} book error:`,
-        error
-      );
-
-      alert(
-        `${modalType.charAt(0).toUpperCase() + modalType.slice(1)} book failed.`
-      );
+      alert("Book deleted successfully!");
     }
+
+    setRowData(updatedBooks);
+    setBooks(updatedBooks);
+
+    closeModal();
+    // refreshData(); // Refresh the book list after edit/delete
   };
 
   // Handle input changes in the form
@@ -132,12 +114,12 @@ function DynamicTable({ headerData, rowData, setBooks }) {
               ))}
               <td>
                 <button onClick={() => openModal("edit", row)}>
-                  <i class="fa-solid fa-pen-to-square"></i>
+                  <i className="fa-solid fa-pen-to-square"></i>
                 </button>
               </td>
               <td>
                 <button onClick={() => openModal("delete", row)}>
-                  <i class="fa-solid fa-trash-can"></i>
+                  <i className="fa-solid fa-trash-can"></i>
                 </button>
               </td>
             </tr>
@@ -174,13 +156,9 @@ function DynamicTable({ headerData, rowData, setBooks }) {
       >
         <h2>Delete Book</h2>
         <p>Are you sure you want to delete this book?</p>
-        <DynamicForm
-          fields={formFields[3].data}
-          onSubmit={handleSubmit}
-          formData={formData}
-          onChange={handleChange}
-          hideSubmit={false}
-        />
+        <button className="btn" onClick={handleSubmit}>
+          Confirm Delete
+        </button>
         <button className="close-modal" onClick={closeModal}>
           x
         </button>

@@ -1,9 +1,14 @@
 import React from "react";
-import { TableHeaderData } from "./TableHeader/TableHeaderData"; // Your header data
+import { TableHeaderData } from "./TableHeader/TableHeaderData";
 import DynamicTable from "./DynamicTable";
 
-function RenderTableData({ books }) {
-  // Ensure the rowData (books) matches the expected structure
+function RenderTableData({
+  books,
+  setRowData,
+  setBooks,
+  pagination,
+  handlePageChange,
+}) {
   const formattedBooks = books.map((book) => ({
     id: book.id,
     name: book.name,
@@ -20,8 +25,10 @@ function RenderTableData({ books }) {
   return (
     <div>
       <DynamicTable
-        headerData={TableHeaderData[0]?.data} // The headers from TableHeaderData
-        rowData={formattedBooks} // The transformed books data
+        headerData={TableHeaderData[0]?.data}
+        rowData={formattedBooks}
+        setRowData={setRowData}
+        setBooks={setBooks}
       />
     </div>
   );
